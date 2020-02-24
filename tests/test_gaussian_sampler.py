@@ -28,8 +28,7 @@ def main():
 
     # Sample from a random class.
     res = clf.sample()
-    plt.figure()
-    fig, axs = plt.subplots(2, 1, figsize=(1, 2))
+    fig, axs = plt.subplots(2, 1, figsize=(4, 8))
     axs[0].imshow(res["sample"].reshape(28, 28))
     axs[1].imshow(res["mean"].reshape(28, 28))
     axs[0].set_title(res["class"])

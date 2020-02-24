@@ -56,9 +56,9 @@ class BayesClassifierGaussian:
             Tuple of the sample and the mean of the class
         """
         g = self.gaussian_list[y]
-        return {"sample": clamp(multivariate_normal.rvs(mean=g['mu'], cov=g['sigma'])), 
-                "mean": g['mu'],
-                "class": y}
+        sample = clamp(multivariate_normal.rvs(mean=g['mu'], cov=g['sigma'])) 
+        mean = g["mu"]
+        return {"sample": sample, "mean": mean, "class": y}
 
     def sample(self):
         """ Pick a random class and sample from it.

@@ -10,6 +10,9 @@ def clamp(x):
 
 class BayesClassifierGMM:
     def __init__(self):
+        """ Constructor
+
+        """
         # Models per class
         self.gaussian_list = []
         # Number of classes
@@ -54,7 +57,7 @@ class BayesClassifierGMM:
         """
         sample, cluster_idx = self.gaussian_list[y].sample()
         mean = self.gaussian_list[y].means_[cluster_idx]
-        return clamp(sample), mean
+        return {"sample": sample, "mean": mean, "class": y, "cluster_idx": cluster_idx}
 
     def sample(self):
         """ Pick a random class and sample from it.
@@ -65,4 +68,4 @@ class BayesClassifierGMM:
             Tuple of the sample and the mean of the class
         """
         y = np.random.choice(self.K, p=self.Py)
-        return clamp(self.sample_given_y(y))
+        return self.sample_given_y(y)
