@@ -38,14 +38,18 @@ samples don't look sharp. The path is:
 ```
 Y -> X
 ```
+<figure class="image">
 <img src="./data/images/samples_gaussian.png">
-_Figure 1: Top row shows drawn samples, bottom row shows mean of the class._
+<figcaption>Figure 1: Top row shows drawn samples, bottom row shows mean of the class.</figcaption>
+</figure>
 
 When using the Bayesian Classifier with Gaussian Mixture Models, it draws samples
 from one of the models in the given class. So, the path is from the class, via
-the latent space, to a sample:
+the latent space, to a sample. The path is:
 ```
 Y -> Z -> X
 ```
+<figure class="image">
 <img src="./data/images/samples_gmm.png">
-_Figure 2: Top row shows drawn samples, bottom row shows mean of the class for the selected cluster._
+<figcaption>Figure 2: Top row shows drawn samples, bottom row shows mean of the class for the selected cluster.</figcaption>
+</figure>
