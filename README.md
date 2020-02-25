@@ -32,7 +32,7 @@ python test_....py
 
 ## Sampling
 
-Now we sample from the model $P(x|y)$. When using the Bayesian Classifier with single
+Now we sample from the model _P(x|y)_. When using the Bayesian Classifier with single
 Gaussian modeling, it draws samples from a single Gaussian per class. The drawn 
 samples don't look sharp. The path is:
 ```
