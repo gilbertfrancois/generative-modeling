@@ -48,7 +48,5 @@ the latent space, to a sample. The path is:
 ```
 Y -> Z -> X
 ```
-<figure class="image">
-<img src="./data/images/samples_gmm.png">
-<figcaption>Figure 2: Top row shows drawn samples, bottom row shows mean of the class for the selected cluster.</figcaption>
-</figure>
+![Samples from GMM distribution](./data/images/samples_gmm.png)
+*Figure 2: Top row shows drawn samples, bottom row shows mean of the class for the selected cluster.*
