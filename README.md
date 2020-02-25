@@ -38,10 +38,9 @@ samples don't look sharp. The path is:
 ```
 Y -> X
 ```
-<figure class="image">
-<img src="./data/images/samples_gaussian.png">
-<figcaption>Figure 1: Top row shows drawn samples, bottom row shows mean of the class.</figcaption>
-</figure>
+![Samples from Gaussian distribution](./data/images/samples_gaussian.png)
+*Figure 1: Top row shows drawn samples, bottom row shows mean of the class.*
+
 
 When using the Bayesian Classifier with Gaussian Mixture Models, it draws samples
 from one of the models in the given class. So, the path is from the class, via
