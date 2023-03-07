@@ -1,8 +1,36 @@
 # Sampling using Bayesian Classifier
 
+Gilbert François Duivesteijn
+
+
+
 ## Abstract
 
 This is a demonstration of generative models, using Bayesian classifiers and unsupervised learning.
+
+
+
+## Sampling
+
+Now we sample from the model _P(x|y)_. When using the Bayesian Classifier with single
+Gaussian modeling, it draws samples from a single Gaussian per class. The drawn 
+samples don't look sharp. The path is:
+```
+Y -> X
+```
+![Samples from Gaussian distribution](./data/images/samples_gaussian.png)
+*Figure 1: Top row shows drawn samples, bottom row shows mean of the class.*
+
+
+When using the Bayesian Classifier with Gaussian Mixture Models, it draws samples
+from one of the models in the given class. So, the path is from the class, via
+the latent space, to a sample. The path is:
+```
+Y -> Z -> X
+```
+![Samples from GMM distribution](./data/images/samples_gmm.png)
+*Figure 2: Top row shows drawn samples, bottom row shows mean of the class for the selected cluster.*
+
 
 
 ## Setup
@@ -30,23 +58,4 @@ python test_....py
 ```
 
 
-## Sampling
-
-Now we sample from the model _P(x|y)_. When using the Bayesian Classifier with single
-Gaussian modeling, it draws samples from a single Gaussian per class. The drawn 
-samples don't look sharp. The path is:
-```
-Y -> X
-```
-![Samples from Gaussian distribution](./data/images/samples_gaussian.png)
-*Figure 1: Top row shows drawn samples, bottom row shows mean of the class.*
-
-
-When using the Bayesian Classifier with Gaussian Mixture Models, it draws samples
-from one of the models in the given class. So, the path is from the class, via
-the latent space, to a sample. The path is:
-```
-Y -> Z -> X
-```
-![Samples from GMM distribution](./data/images/samples_gmm.png)
-*Figure 2: Top row shows drawn samples, bottom row shows mean of the class for the selected cluster.*
+## 
