@@ -2,7 +2,7 @@
 
 ## Abstract
 
-To do...
+This is a demonstration of generative models, using Bayesian classifiers and unsupervised learning.
 
 
 ## Setup
@@ -12,7 +12,7 @@ and download the MNIST handwritten digits set: `train.csv` and `test.csv`.
 Place the 2 files in the `data/` folder.
 
 When using poetry as venv manager, just type `poetry install`. If you prefer
-pipenv or plain old pip, look in the `pyproject.toml` file for the necessary
+plain old pip, look in the `pyproject.toml` file for the necessary
 libraries and install them in your python environment.
 
 To run the examples:
