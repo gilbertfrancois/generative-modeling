@@ -24,9 +24,7 @@ def clamp(x):
 
 class BayesClassifierGMM:
     def __init__(self):
-        """ Constructor
-
-        """
+        """Constructor"""
         # Models per class
         self.gaussian_list = []
         # Number of classes
@@ -35,7 +33,7 @@ class BayesClassifierGMM:
         self.Py = np.zeros(self.K)
 
     def fit(self, X, Y):
-        """ Fit the model for the given training data.
+        """Fit the model for the given training data.
 
         Parameters
         ----------
@@ -51,13 +49,13 @@ class BayesClassifierGMM:
             print(f"Fitting Gaussian Mixture Model for class {k}")
             Xk = X[Y == k]
             self.Py[k] = len(Xk)
-            gmm = BayesianGaussianMixture(10)
+            gmm = BayesianGaussianMixture(n_components=10)
             gmm.fit(Xk)
             self.gaussian_list.append(gmm)
         self.Py = self.Py / self.Py.sum()
 
     def sample_given_y(self, y):
-        """ Select a gaussian for class y and sample from it.
+        """Select a gaussian for class y and sample from it.
 
         Parameters
         ----------
@@ -74,7 +72,7 @@ class BayesClassifierGMM:
         return {"sample": sample, "mean": mean, "class": y, "cluster_idx": cluster_idx}
 
     def sample(self):
-        """ Pick a random class and sample from it.
+        """Pick a random class and sample from it.
 
         Returns
         -------

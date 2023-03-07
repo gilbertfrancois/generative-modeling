@@ -1,16 +1,15 @@
 import time
-import numpy as np
-import mxnet as mx
+
 import matplotlib.pyplot as plt
-from mxnet import nd
-from mxnet import autograd
-from mxnet import gluon
+import mxnet as mx
+import numpy as np
+from mxnet import autograd, gluon, nd
 from mxnet.gluon import nn
 
 
 def gpu_exists():
     try:
-        mx.nd.zeros((1, ), ctx=mx.gpu(0))
+        mx.nd.zeros((1,), ctx=mx.gpu(0))
     except:
         return False
     return True
@@ -45,10 +44,13 @@ def show_samples(n_samples, mnist_data):
     plt.show()
 
 
-train_data = np.reshape(mnist_data["train_data"], (-1, 28*28))
-test_data = np.reshape(mnist_data["test_data"], (-1, 28*28))
+train_data = np.reshape(mnist_data["train_data"], (-1, 28 * 28))
+test_data = np.reshape(mnist_data["test_data"], (-1, 28 * 28))
+
 
 class VAE(gluon.HybridBlock):
-    def __init__(self, n_hidden=400, n_latent=2, n_layers=1, n_output=768, batch_size=100):
+    def __init__(
+        self, n_hidden=400, n_latent=2, n_layers=1, n_output=768, batch_size=100
+    ):
         # TODO Continue implementation
         pass

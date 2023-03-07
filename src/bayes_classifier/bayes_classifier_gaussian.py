@@ -24,9 +24,7 @@ def clamp(x):
 
 class BayesClassifierGaussian:
     def __init__(self):
-        """ Constructor
-
-        """
+        """Constructor"""
         # Models per class
         self.gaussian_list = []
         # Number of classes
@@ -35,7 +33,7 @@ class BayesClassifierGaussian:
         self.Py = np.zeros(self.K)
 
     def fit(self, X, Y):
-        """ Fit the model for the given training data.
+        """Fit the model for the given training data.
 
         Parameters
         ----------
@@ -57,7 +55,7 @@ class BayesClassifierGaussian:
         self.Py = self.Py / self.Py.sum()
 
     def sample_given_y(self, y):
-        """ Select a gaussian for class y and sample from it.
+        """Select a gaussian for class y and sample from it.
 
         Parameters
         ----------
@@ -70,12 +68,12 @@ class BayesClassifierGaussian:
             Tuple of the sample and the mean of the class
         """
         g = self.gaussian_list[y]
-        sample = clamp(multivariate_normal.rvs(mean=g['mu'], cov=g['sigma'])) 
+        sample = clamp(multivariate_normal.rvs(mean=g["mu"], cov=g["sigma"]))
         mean = g["mu"]
         return {"sample": sample, "mean": mean, "class": y}
 
     def sample(self):
-        """ Pick a random class and sample from it.
+        """Pick a random class and sample from it.
 
         Returns
         -------
